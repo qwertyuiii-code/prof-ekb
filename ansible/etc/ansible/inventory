@@ -1,0 +1,11 @@
+[networking]
+RTR-HQ ansible_host=#put here ip from topology
+RTR-BR ansible_host=#put here ip from topology
+
+[servers]
+SRV-HQ ansible_host=#put here ip from topology
+SRV-BR ansible_host=#put here ip from topology
+
+[clients]
+CLI-HQ ansible_host=#put here ip from topology
+CLI-BR ansible_host=#put here ip from topology

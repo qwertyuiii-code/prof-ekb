@@ -1,0 +1,13 @@
+---
+- name: Gather IP and hostnames
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Get IP and hostname
+      command: hostname -I
+      register: ip_address
+
+    - name: Save to file
+      copy:
+        content: "{{ inventory_hostname }} – {{ ip_address.stdout }}"
+        dest: /etc/ansible/output.yaml
