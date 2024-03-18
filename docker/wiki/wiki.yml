@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  wiki:
+    image: mediawiki
+    ports:
+      - "80:80"
+    volumes:
+      - /home/ubuntu/LocalSettings.php:/var/www/html/LocalSettings.php
+    networks:
+      - app2_network
+
+  db:
+    image: mysql
+    environment:
+      MYSQL_DATABASE: mediawiki
+      MYSQL_USER: wiki
+      MYSQL_PASSWORD: P@ssw0rd
+      MYSQL_ROOT_PASSWORD: P@ssw0rd
+    volumes:
+      - dbvolume:/var/lib/mysql
+    networks:
+      - app2_network
+
+volumes:
+  dbvolume:
+
+networks:
+  app2_network:
+    external: true
