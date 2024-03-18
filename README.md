@@ -18,4 +18,5 @@
 
 1) Подготовка машины ControlVM - сделано
 2) Настройка внешнего подключения к ControlVM через PuTTY - сделано
-3) Docker Compose - не сделано
+3) Docker Compose - сделано
+
